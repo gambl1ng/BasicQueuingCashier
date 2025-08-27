@@ -36,6 +36,7 @@
             // 
             // btnCashier
             // 
+            this.btnCashier.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCashier.ForeColor = System.Drawing.Color.Black;
             this.btnCashier.Location = new System.Drawing.Point(44, 59);
             this.btnCashier.Name = "btnCashier";
