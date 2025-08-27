@@ -31,10 +31,12 @@
             this.btnCashier = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lblQueue = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnCashier
             // 
+            this.btnCashier.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnCashier.Location = new System.Drawing.Point(63, 59);
             this.btnCashier.Name = "btnCashier";
             this.btnCashier.Size = new System.Drawing.Size(104, 95);
@@ -46,10 +48,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(274, 59);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(203, 27);
+            this.label1.Size = new System.Drawing.Size(219, 29);
             this.label1.TabIndex = 1;
             this.label1.Text = "Position in Queue";
             // 
@@ -59,16 +61,26 @@
             this.lblQueue.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQueue.Location = new System.Drawing.Point(225, 111);
             this.lblQueue.Name = "lblQueue";
-            this.lblQueue.Size = new System.Drawing.Size(319, 73);
+            this.lblQueue.Size = new System.Drawing.Size(0, 73);
             this.lblQueue.TabIndex = 2;
-            this.lblQueue.Text = "P - 10007";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(60, 171);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(111, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "*Click to get a number";
             // 
             // QueuingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkOliveGreen;
-            this.ClientSize = new System.Drawing.Size(562, 303);
+            this.BackColor = System.Drawing.Color.BurlyWood;
+            this.ClientSize = new System.Drawing.Size(542, 303);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.lblQueue);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCashier);
@@ -84,6 +96,7 @@
         private System.Windows.Forms.Button btnCashier;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblQueue;
+        private System.Windows.Forms.Label label2;
     }
 }
 

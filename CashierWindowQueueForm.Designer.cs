@@ -52,12 +52,13 @@
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(65, 96);
+            this.btnNext.Location = new System.Drawing.Point(65, 84);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(75, 23);
             this.btnNext.TabIndex = 1;
             this.btnNext.Text = "Next";
             this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click_1);
             // 
             // listCashierQueue
             // 
@@ -109,7 +110,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.BackColor = System.Drawing.Color.BurlyWood;
             this.ClientSize = new System.Drawing.Size(458, 307);
             this.Controls.Add(this.listCashierQueue);
             this.Controls.Add(this.btnNext);

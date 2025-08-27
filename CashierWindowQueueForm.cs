@@ -34,19 +34,19 @@ namespace BasicQueuingCashier
         {
             DisplayCashierQueue(CashierClass.CashierQueue);
         }
-        private void btnNext_Click(object sender, EventArgs e)
+        
 
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            DisplayCashierQueue(CashierClass.CashierQueue);
+        }
+
+        private void btnNext_Click_1(object sender, EventArgs e)
         {
             if (CashierClass.CashierQueue.Count > 0)
             {
                 CashierClass.CashierQueue.Dequeue();
             }
-
-        }
-
-        private void timer_Tick(object sender, EventArgs e)
-        {
-            DisplayCashierQueue(CashierClass.CashierQueue);
         }
     }
 }
