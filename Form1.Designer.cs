@@ -36,8 +36,8 @@
             // 
             // btnCashier
             // 
-            this.btnCashier.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCashier.Location = new System.Drawing.Point(63, 59);
+            this.btnCashier.ForeColor = System.Drawing.Color.Black;
+            this.btnCashier.Location = new System.Drawing.Point(44, 59);
             this.btnCashier.Name = "btnCashier";
             this.btnCashier.Size = new System.Drawing.Size(104, 95);
             this.btnCashier.TabIndex = 0;
@@ -67,10 +67,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(60, 171);
+            this.label2.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(28, 176);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 13);
+            this.label2.Size = new System.Drawing.Size(170, 18);
             this.label2.TabIndex = 3;
             this.label2.Text = "*Click to get a number";
             // 

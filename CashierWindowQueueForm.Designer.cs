@@ -52,7 +52,7 @@
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(65, 84);
+            this.btnNext.Location = new System.Drawing.Point(65, 63);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(75, 23);
             this.btnNext.TabIndex = 1;
@@ -71,9 +71,9 @@
             this.columnHeader6,
             this.columnHeader7});
             this.listCashierQueue.HideSelection = false;
-            this.listCashierQueue.Location = new System.Drawing.Point(156, 34);
+            this.listCashierQueue.Location = new System.Drawing.Point(147, 34);
             this.listCashierQueue.Name = "listCashierQueue";
-            this.listCashierQueue.Size = new System.Drawing.Size(136, 237);
+            this.listCashierQueue.Size = new System.Drawing.Size(153, 261);
             this.listCashierQueue.TabIndex = 9;
             this.listCashierQueue.UseCompatibleStateImageBehavior = false;
             this.listCashierQueue.View = System.Windows.Forms.View.List;
@@ -111,7 +111,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.BurlyWood;
-            this.ClientSize = new System.Drawing.Size(458, 307);
+            this.ClientSize = new System.Drawing.Size(312, 307);
             this.Controls.Add(this.listCashierQueue);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnRefresh);
