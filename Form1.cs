@@ -11,26 +11,19 @@ using System.Windows.Forms;
 namespace BasicQueuingCashier
 {
     public partial class QueuingForm : Form
-
     {
         private CashierWindowQueueForm cashierform;
         private CashierClass cashier;
-
-
+        private Form2 serving;
+        private System.Windows.Forms.Label Queue;
         public QueuingForm()
         {
             InitializeComponent();
-            cashier = new CashierClass();
-            cashierform = new CashierWindowQueueForm();
+            cashier = CashierClass.Instance;
+            cashierform = new CashierWindowQueueForm(cashier);
+            serving = new Form2(cashier);
             cashierform.Show();
-
-        }
-
-        private void btnCashier_Click(object sender, EventArgs e)
-        {
-            lblQueue.Text = cashier.CashierGeneratedNumber("P - ");
-            CashierClass.getNumberInQueue = lblQueue.Text;
-            CashierClass.CashierQueue.Enqueue(CashierClass.getNumberInQueue);
+            serving.Show();
         }
     }
 }

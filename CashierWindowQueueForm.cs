@@ -13,40 +13,28 @@ namespace BasicQueuingCashier
 {
     public partial class CashierWindowQueueForm : Form
     {
-        private Timer timer;
+        private CashierClass cashier; 
+        public CashierWindowQueueForm(CashierClass cashier)
+        {
+            InitializeComponent();
+            this.cashier = cashier;
+            this.cashier.OnQueueUpdated += UpdateQueueList;
+        }
         public CashierWindowQueueForm()
         {
             InitializeComponent();
-            timer = new Timer();
-            timer.Interval = 1000; 
-            timer.Tick += timer_Tick;
-            timer.Start();
         }
-        public void DisplayCashierQueue(IEnumerable CashierList)
+        private void UpdateQueueList(Queue<string> queue)
         {
             listCashierQueue.Items.Clear();
-            foreach (Object obj in CashierList)
+            foreach (string number in queue)
             {
-                listCashierQueue.Items.Add(obj.ToString());
+                listCashierQueue.Items.Add(number);
             }
         }
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
-            DisplayCashierQueue(CashierClass.CashierQueue);
-        }
-        
-
-        private void timer_Tick(object sender, EventArgs e)
-        {
-            DisplayCashierQueue(CashierClass.CashierQueue);
-        }
-
         private void btnNext_Click_1(object sender, EventArgs e)
         {
-            if (CashierClass.CashierQueue.Count > 0)
-            {
-                CashierClass.CashierQueue.Dequeue();
-            }
+            this.cashier.Dequeue();
         }
     }
 }

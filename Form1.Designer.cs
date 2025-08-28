@@ -44,7 +44,6 @@
             this.btnCashier.TabIndex = 0;
             this.btnCashier.Text = "Cashier";
             this.btnCashier.UseVisualStyleBackColor = true;
-            this.btnCashier.Click += new System.EventHandler(this.btnCashier_Click);
             // 
             // label1
             // 
@@ -80,8 +79,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.BurlyWood;
-            this.ClientSize = new System.Drawing.Size(542, 303);
+            this.BackColor = System.Drawing.Color.Bisque;
+            this.ClientSize = new System.Drawing.Size(497, 303);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblQueue);
             this.Controls.Add(this.label1);
