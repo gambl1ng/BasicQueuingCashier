@@ -41,7 +41,7 @@
             this.Queue1.Size = new System.Drawing.Size(144, 24);
             this.Queue1.TabIndex = 0;
             this.Queue1.Text = "*Now Serving";
-//            this.Queue1.Click += new System.EventHandler(this.Queue1_Click);
+
             // 
             // RunQueue
             // 
