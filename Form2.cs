@@ -1,54 +1,41 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BasicQueuingCashier
 {
     public partial class Form2 : Form
     {
-        private Timer timer;
-        private CashierClass cashierInstance; // Dito tatanggapin ang instance ng CashierClass
-        private System.Windows.Forms.Label RunQueue; // Siguraduhin na ito ang pangalan ng label sa designer
+        private CashierClass cashierInstance;
 
-        // Ang bagong constructor na tumatanggap ng CashierClass object
+        public Form2()
+        {
+            InitializeComponent();
+        }
+
         public Form2(CashierClass cashier)
         {
             InitializeComponent();
-            this.cashierInstance = cashier; // I-assign ang instance sa local variable
-
-            // Itong code sa loob ng constructor ang mag-a-update ng display
-            timer = new Timer();
-            timer.Interval = 1000;
-            timer.Tick += UpdateQueueDisplay;
-            timer.Start();
-
-            // Mag-subscribe din sa event ng CashierClass para sa real-time updates
-            this.cashierInstance.OnQueueUpdated += UpdateQueueDisplayDirectly;
+            this.cashierInstance = cashier;
+            this.cashierInstance.OnQueueUpdated += UpdateQueueDisplay;
         }
 
-        // Ang default constructor ay dapat na nandoon para sa designer
-        // public Form2()
-        // {
-        //     InitializeComponent();
-        // }
-
-        // Ito ang method na tatawagin ng timer
-        public void UpdateQueueDisplay(object sender, EventArgs e)
+        public void UpdateQueueDisplay(Queue<string> queue)
         {
-            // Gamitin ang CashierClass instance para makuha ang queue
-            Queue<string> cashierQueue = cashierInstance.CashierQueue;
-
-            // I-update ang text ng RunQueue label
-            if (RunQueue != null)
+            if (RunQueue.InvokeRequired)
             {
-                RunQueue.Text = cashierQueue.Count > 0 ? cashierQueue.Peek() : " ";
+                RunQueue.Invoke((MethodInvoker)delegate
+                {
+                    RunQueue.Text = queue.Count > 0 ? queue.Peek() : " ";
+                });
             }
-        }
-
-        // Isang mas direktang method na tatawagin ng event
-        public void UpdateQueueDisplayDirectly(Queue<string> queue)
-        {
-            if (RunQueue != null)
+            else
             {
                 RunQueue.Text = queue.Count > 0 ? queue.Peek() : " ";
             }

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,28 +12,46 @@ namespace BasicQueuingCashier
 {
     public partial class CashierWindowQueueForm : Form
     {
-        private CashierClass cashier; 
-        public CashierWindowQueueForm(CashierClass cashier)
-        {
-            InitializeComponent();
-            this.cashier = cashier;
-            this.cashier.OnQueueUpdated += UpdateQueueList;
-        }
+        private CashierClass cashierInstance;
+
         public CashierWindowQueueForm()
         {
             InitializeComponent();
         }
+
+        public CashierWindowQueueForm(CashierClass cashier)
+        {
+            InitializeComponent();
+            this.cashierInstance = cashier;
+            this.cashierInstance.OnQueueUpdated += UpdateQueueList;
+        }
+
         private void UpdateQueueList(Queue<string> queue)
         {
-            listCashierQueue.Items.Clear();
-            foreach (string number in queue)
+            if (this.listCashierQueue.InvokeRequired)
             {
-                listCashierQueue.Items.Add(number);
+                this.listCashierQueue.Invoke((MethodInvoker)delegate
+                {
+                    listCashierQueue.Items.Clear();
+                    foreach (string number in queue)
+                    {
+                        listCashierQueue.Items.Add(number);
+                    }
+                });
+            }
+            else
+            {
+                listCashierQueue.Items.Clear();
+                foreach (string number in queue)
+                {
+                    listCashierQueue.Items.Add(number);
+                }
             }
         }
-        private void btnNext_Click_1(object sender, EventArgs e)
+
+        private void btnNext_Click(object sender, EventArgs e)
         {
-            this.cashier.Dequeue();
+            this.cashierInstance.Dequeue();
         }
     }
 }
